@@ -1,0 +1,5 @@
+= form_for @article do |f|
+	= f.text_field :title, placeholder: @article.title, class: "input-block-level"
+	= f.text_field :text, placeholder: @article.text, class: "input-block-level"
+
+	= f.submit 'Save Article', class: 'btn btn-primary'

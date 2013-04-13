@@ -4,7 +4,7 @@
 		%title wikibitmaker
 		= stylesheet_link_tag    "application", :media => "all"
 		= javascript_include_tag "application"
-		= csrf_meta_tags
+		= csrf_meta_tag
 
 	%body
 
@@ -13,11 +13,12 @@
 				%img#bitmaker_logo{ src: image_path("bitmaker_labs_logo.png")}
 				%ul
 					%li= link_to "Discussion", @discussion
-					- if current_page?(edit_article_path(params[:id]))
-						%li= link_to "Show Article", article_path(params[:id])
-					- else
-						%li= link_to "Edit Article", edit_article_path(params[:id])
 					%li= link_to "New Article", new_article_path
+					- if params[:id]
+						- if current_page?(article_path(params[:id]))
+							%li= link_to "Edit Article", edit_article_path(params[:id])
+						- else
+							%li= link_to "Show Article", article_path(params[:id])
 
 		- if flash[:notice]
 			%div.alert.alert-success
