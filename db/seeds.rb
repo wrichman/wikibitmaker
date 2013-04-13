@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(username: "mvleming", password: "password")
+Article.create(title: "Home", text: "Blah Blah Blah Blah Tommy is so tired")
