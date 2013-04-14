@@ -33,7 +33,8 @@
 		%div.bottom_nav
 			%hr
 			- if current_user
-				
+				%span.to_left
+					= link_to "Wikibitmaker", "#"
 			- else
 				%span.to_left
 					= link_to "About", "/about"
