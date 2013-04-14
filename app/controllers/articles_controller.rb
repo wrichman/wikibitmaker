@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
 	def create
 		@article = Article.create params[:article]
 		if @article.save
+			@article.build_discussion
 			redirect_to @article
 		else
 			render :new
