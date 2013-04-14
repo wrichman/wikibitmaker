@@ -1,0 +1,16 @@
+%h1= "Discussion for " + @discussion.article.title
+
+%table#discussion
+  - @comments.each do |comment| 
+    %tr
+      %td
+        %span.username= comment.user.username
+        %br
+        %span.time= comment.created_at.strftime("%B %d, %Y at %l:%M %P")
+      %td
+        = comment.text
+
+= form_for [:article, :discussion, @comment] do |f|
+  = f.text_field :text, placeholder: @comment.text, class: "input-block-level"
+
+  = f.submit 'Comment', class: 'btn btn-primary'
