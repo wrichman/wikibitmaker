@@ -1,5 +1,6 @@
 %div.article
 	%h1= @article.title
-	= link_to "Edit", [:edit, @article]
-	= link_to "Discussion", [@article, :discussion]
+	%p.links
+		= link_to "Edit", [:edit, @article]
+		= link_to "Discussion", [@article, :discussion]
 	%p= @article.text

@@ -2,16 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.time {
-	font-size: 13px;
-}
+body#discussions {
+	.time {
+		font-size: 13px;
+	}
 
-.username {
-	font-weight: 700;
-	font-size: 17px;
-}
+	.username {
+		font-weight: 700;
+		font-size: 17px;
+	}
 
-tr {
+	tr {
 		td {
 			padding: 0;
 			padding-bottom: 15px;
@@ -21,3 +22,4 @@ tr {
 			padding-right: 30px;
 		}
 	}
+}

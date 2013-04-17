@@ -6,7 +6,7 @@
 		= javascript_include_tag "application"
 		= csrf_meta_tag
 
-	%body
+	%body{:id => "#{params[:controller].parameterize}"}
 
 		- if current_user
 			%div.left_nav
