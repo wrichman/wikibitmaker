@@ -10,18 +10,8 @@
 
 		- if current_user
 			%div.left_nav
-				/ %img#bitmaker_logo{ src: image_path("bitmaker_labs_logo.png") }
 				%ul
 					%li= link_to "New Article", [:new, :article]
-					- unless params[:article_id]
-						- if params[:id]
-							- if current_page?(article_path(params[:id]))
-								%li= link_to "Edit Article", [:edit, :article]
-							- else
-								%li= link_to "Show Article", :article
-							%li= link_to "Discussion", article_discussion_path(params[:id])
-					- else
-						%li= link_to "Article", article_path(params[:article_id])
 					%li= link_to "Sign out", :session, :method => :delete
 
 		- if flash[:notice]
@@ -38,7 +28,7 @@
 			%hr
 			- if current_user
 				%span.to_left
-					= link_to "Wikibitmaker", "#"
+					= link_to "Wikibitmaker", :articles
 			- else
 				%span.to_left
 					= link_to "About", "/about"

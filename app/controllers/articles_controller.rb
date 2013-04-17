@@ -2,6 +2,11 @@ class ArticlesController < ApplicationController
 	before_filter :require_user
 	before_filter :require_article, only: [:show, :edit, :update]
 
+	def index
+		@article = Article.find_by_title("Home")
+		render :show
+	end
+
 	def show
 	end
 

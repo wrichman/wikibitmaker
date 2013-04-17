@@ -1,3 +1,23 @@
 // Place all the styles related to the discussions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.time {
+	font-size: 13px;
+}
+
+.username {
+	font-weight: 700;
+	font-size: 17px;
+}
+
+tr {
+		td {
+			padding: 0;
+			padding-bottom: 15px;
+			vertical-align: top;
+		}
+		td:first-child {
+			padding-right: 30px;
+		}
+	}

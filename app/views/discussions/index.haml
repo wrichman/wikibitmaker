@@ -1,10 +1,12 @@
 %h1= "Discussion for " + @discussion.article.title
+= link_to "Article", @discussion.article
 
-%table#discussion
+%table
   - @comments.each do |comment| 
     %tr
       %td
-        %span.username= comment.user.username
+        %span.username
+          = comment.user.username
         %br
         %span.time= comment.created_at.strftime("%B %d, %Y at %l:%M %P")
       %td
