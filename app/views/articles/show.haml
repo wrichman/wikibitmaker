@@ -3,4 +3,4 @@
 	%p.links
 		= link_to "Edit", [:edit, @article]
 		= link_to "Discussion", [@article, :discussion]
-	%p= @article.text
+	%p= BlueCloth.new(@article.text).to_html.html_safe
