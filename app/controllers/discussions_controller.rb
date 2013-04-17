@@ -1,5 +1,5 @@
 class DiscussionsController < ApplicationController
-  def show
+  def index
     @discussion = Article.find(params[:article_id]).discussion
     @comments   = @discussion.comments.order('comments.created_at ASC').all
     @comment    = @discussion.comments.build

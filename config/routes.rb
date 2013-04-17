@@ -4,9 +4,9 @@ Wikibitmaker::Application.routes.draw do
 
   root :to => 'sessions#new'
 
-  resources :sessions
+  resource :session, :only => [:new, :create, :destroy]
   resources :articles do
-    get "/discussion" => "discussions#show"
+    get "/discussion" => "discussions#index"
     post "discussion/comments" => "comments#create"
   end
 end

@@ -10,7 +10,7 @@
       %td
         = comment.text
 
-= form_for [:article, :discussion, @comment] do |f|
+= form_for [@discussion.article, @discussion, @comment] do |f|
   = f.text_field :text, placeholder: @comment.text, class: "input-block-level"
 
   = f.submit 'Comment', class: 'btn btn-primary'
