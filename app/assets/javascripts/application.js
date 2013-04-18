@@ -26,4 +26,7 @@ $(document).ready(function() {
         }    
     }, 775);
   });
+  $('.links a:first-child').on("click", function(){
+    $('h1').replaceWith("<%= f.text_field :title, placeholder: @article.title, class: 'input-block-level'%>")
+  })
 });

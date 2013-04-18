@@ -1,6 +1,6 @@
 %div.article
 	%h1= @article.title
 	%p.links
-		= link_to "Edit", [:edit, @article]
+		= link_to "Edit"
 		= link_to "Discussion", [@article, :discussion]
 	%p= BlueCloth.new(@article.text).to_html.html_safe

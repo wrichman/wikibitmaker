@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body#articles {
-	h1 {
-	margin-bottom: 4px;
-	}
 
 	.links {
 		font-size: 14px;
 		font-weight: normal;
+		a {
+			padding-right: 7px;
+		}
 	}
 }

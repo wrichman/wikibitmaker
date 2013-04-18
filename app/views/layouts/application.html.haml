@@ -12,7 +12,7 @@
 			%div.left_nav
 				%ul
 					%li= link_to "New Article", [:new, :article]
-					%li= link_to "Sign out", :session, :method => :delete
+					%li= link_to "Sign Out", :session, :method => :delete
 
 		- if flash[:notice]
 			%div.alert.alert-success
