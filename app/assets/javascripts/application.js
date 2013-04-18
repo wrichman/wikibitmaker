@@ -58,8 +58,8 @@ $(document).ready(function() {
 
       // callback handler that will be called on success
       request.done(function (response, textStatus, jqXHR){
-          $(".title").text($inputs[3]["value"]);
-          $(".text").text($inputs[4]["value"]);
+          $(".title").load("/articles/1 .title");
+          $(".text").load("/articles/1 .text");
           $('textarea').toggle();
           $('input[type="text"]').toggle();
           $('input[type="submit"]').toggle();
