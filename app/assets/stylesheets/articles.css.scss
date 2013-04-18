@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body#articles {
-
 	.links {
 		font-size: 14px;
 		font-weight: normal;
@@ -11,4 +10,8 @@ body#articles {
 			padding-right: 7px;
 		}
 	}
+	input[type="text"], textarea, input[type="submit"] {
+		display: none;
+	}
+
 }

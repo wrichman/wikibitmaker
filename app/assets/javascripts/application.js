@@ -26,7 +26,49 @@ $(document).ready(function() {
         }    
     }, 775);
   });
-  $('.links a:first-child').on("click", function(){
-    $('h1').replaceWith("<%= f.text_field :title, placeholder: @article.title, class: 'input-block-level'%>")
+  $('#edit').click(function(){
+    $('textarea').toggle();
+    $('input[type="text"]').toggle();
+    $('input[type="submit"]').toggle();
+    $('.links').toggle();
+    $('.title').toggle();
+    $('.text').toggle();
   })
+  // variable to hold request
+  var request;
+  // bind to the submit event of our form
+  $("form").submit(function(event){
+      // abort any pending request
+      if (request) {
+          request.abort();
+      }
+      // setup some local variables
+      var $form = $(this);
+      // let's select and cache all the fields
+      var $inputs = $form.find("input, textarea");
+      // serialize the data in the form
+      var serializedData = $form.serialize();
+
+      // fire off the request to /form.php
+      var request = $.ajax({
+          url: "/articles/1",
+          type: "post",
+          data: serializedData
+      });
+
+      // callback handler that will be called on success
+      request.done(function (response, textStatus, jqXHR){
+          $(".title").text($inputs[3]["value"]);
+          $(".text").text($inputs[4]["value"]);
+          $('textarea').toggle();
+          $('input[type="text"]').toggle();
+          $('input[type="submit"]').toggle();
+          $('.links').toggle();
+          $('.title').toggle();
+          $('.text').toggle();
+      });
+
+      // prevent default posting of form
+      event.preventDefault();
+  });
 });
