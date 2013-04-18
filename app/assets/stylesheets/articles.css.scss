@@ -4,10 +4,31 @@
 
 body#articles {
 	.text {
-		font-size: 16px;
+		font-size: 17px;
 	}
-	input[type="text"], textarea, input[type="submit"] {
-		display: none;
+	#show {
+		input[type="text"], textarea, input[type="submit"] {
+			display: none;
+		}
 	}
-
+	#articles_list {
+		list-style: none;
+		margin: 0;
+		li {
+			h2:first-child {
+				margin-top: 0;
+			}
+			h2 {
+				margin-bottom: 0px;
+			}
+			p {
+				margin-top: 8px;
+				margin-left: 20px;
+			}
+			span {
+				font-size: 13px;
+				font-weight: normal;
+			}
+		}
+	}
 }

@@ -1,11 +1,12 @@
-= form_for @article do |f|
-	%div.article
-		%h1
-			%span.title= @article.title
-			= f.text_field :title, placeholder: @article.title, class: "input-block-level"
-		%p.links
-			%a#edit Edit
-			= link_to "Discussion", [@article, :discussion]
-		%div.text= BlueCloth.new(@article.text).to_html.html_safe
-		= f.text_area :text, placeholder: @article.text, class: "input-block-level"
-		= f.submit 'Save Article', class: 'btn btn-primary'
+%div#show
+	= form_for @article do |f|
+		%div.article
+			%h1
+				%span.title= @article.title
+				= f.text_field :title, placeholder: @article.title, class: "input-block-level"
+			%p.links
+				%a#edit Edit
+				= link_to "Discussion", [@article, :discussion]
+			%div.text= BlueCloth.new(@article.text).to_html.html_safe
+			= f.text_area :text, placeholder: @article.text, class: "input-block-level"
+			= f.submit 'Save Article', class: 'btn btn-primary'

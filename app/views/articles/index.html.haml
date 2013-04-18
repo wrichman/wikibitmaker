@@ -1,3 +1,6 @@
-%ul
+%ul#articles_list
 	- @articles.each do |article|
-		%li= link_to article.title, article_path(article)
+		%li
+			%h2= link_to article.title, article_path(article)
+			%span= "Last edited at " + article.updated_at.strftime("%l:%M %P on %B %d, %Y")
+			%p= truncate(article.text, length: 290)
