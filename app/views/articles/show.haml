@@ -4,7 +4,7 @@
 			%span.title= @article.title
 			= f.text_field :title, placeholder: @article.title, class: "input-block-level"
 		%p.links
-			%span#edit Edit
+			%a#edit Edit
 			= link_to "Discussion", [@article, :discussion]
 		%div.text= BlueCloth.new(@article.text).to_html.html_safe
 		= f.text_area :text, placeholder: @article.text, class: "input-block-level"

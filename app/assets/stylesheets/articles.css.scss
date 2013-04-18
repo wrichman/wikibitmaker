@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body#articles {
+	.text {
+		font-size: 16px;
+	}
 	.links {
 		font-size: 14px;
 		font-weight: normal;
