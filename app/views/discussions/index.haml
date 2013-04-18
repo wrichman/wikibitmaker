@@ -1,5 +1,5 @@
 %h1= "Discussion for " + @discussion.article.title
-= link_to "Article", @discussion.article
+%p.links= link_to "Article", @discussion.article
 
 %table
   - @comments.each do |comment| 

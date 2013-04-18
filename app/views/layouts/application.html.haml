@@ -11,6 +11,7 @@
 		- if current_user
 			%div.left_nav
 				%ul
+					%li= link_to "Articles", :articles
 					%li= link_to "New Article", [:new, :article]
 					%li= link_to "Sign Out", :session, :method => :delete
 

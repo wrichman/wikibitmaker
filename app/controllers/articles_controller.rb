@@ -3,8 +3,7 @@ class ArticlesController < ApplicationController
 	before_filter :require_article, only: [:show, :edit, :update]
 
 	def index
-		@article = Article.find_by_title("Home")
-		render :show
+		@articles = Article.all
 	end
 
 	def show
