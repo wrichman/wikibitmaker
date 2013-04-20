@@ -48,18 +48,19 @@ $(document).ready(function() {
       var $inputs = $form.find("input, textarea");
       // serialize the data in the form
       var serializedData = $form.serialize();
+      var article_num = document.URL.match(/[0-9]+$/);
 
-      // fire off the request to /form.php
+      // fire off the request to /form
       var request = $.ajax({
-          url: "/articles/1",
+          url: "/articles/" + article_num,
           type: "post",
           data: serializedData
       });
 
       // callback handler that will be called on success
       request.done(function (response, textStatus, jqXHR){
-          $(".title").load("/articles/1 .title");
-          $(".text").load("/articles/1 .text");
+          $(".title").load("/articles/" + article_num +  " .title");
+          $(".text").load("/articles/" + article_num +  " .text");
           $('textarea').toggle();
           $('input[type="text"]').toggle();
           $('input[type="submit"]').toggle();
